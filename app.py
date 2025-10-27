@@ -33,6 +33,18 @@ app.config['MYSQL_POOL_NAME'] = 'mypool'
 app.config['MYSQL_POOL_SIZE'] = 5
 
 
+import threading
+
+def send_email_async(app, msg):
+    with app.app_context():
+        try:
+            mail.send(msg)
+            print("Email sent successfully!")
+        except Exception as e:
+            print("Error sending email:", e)
+
+
+
 # --------------------------
 # Flask-Mail Configuration
 # --------------------------
@@ -195,7 +207,8 @@ def signup():
         recipients=[email],
         body=f"Hello {name},\n\nWelcome to Bikes Bay! Your account has been created successfully.\n\nYou can now log in and start exploring premium bikes.\n\nThank you for joining us!\n\n- Team Bikes Bay"
     )
-    mail.send(msg)
+    threading.Thread(target=send_email_async, args=(app, msg)).start()
+
 
     flash("Account created successfully! Please check your email and login.", "success")
     return redirect(url_for('show_login'))
