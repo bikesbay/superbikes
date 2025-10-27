@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell Your Bike</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/resale.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form
+          action="{{ url_for('sell_bike_page') }}"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <h2 class="formbold-form-label-2">Sell Your Motorcycle</h2>
+
+          <!-- Full Name -->
+          <div class="formbold-mb-5">
+            <label for="name" class="formbold-form-label">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your full name"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="formbold-mb-5">
+            <label for="email" class="formbold-form-label">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email address"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Phone -->
+          <div class="formbold-mb-5">
+            <label for="phone" class="formbold-form-label">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Enter your phone number"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Address -->
+          <div class="formbold-mb-5">
+            <label for="address" class="formbold-form-label"
+              >Full Address</label
+            >
+            <textarea
+              name="address"
+              id="address"
+              rows="3"
+              placeholder="Enter complete address"
+              class="formbold-form-input"
+              required
+            ></textarea>
+          </div>
+
+          <!-- Chassis Number -->
+          <div class="formbold-mb-5">
+            <label for="chassis" class="formbold-form-label"
+              >Chassis Number</label
+            >
+            <input
+              type="text"
+              name="chassis"
+              id="chassis"
+              placeholder="Enter chassis number"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Vehicle Plate Number -->
+          <div class="formbold-mb-5">
+            <label for="plate" class="formbold-form-label"
+              >Vehicle Plate Number</label
+            >
+            <input
+              type="text"
+              name="plate"
+              id="plate"
+              placeholder="Enter registration plate number"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- RC Book Image -->
+          <div class="formbold-mb-5">
+            <label for="rc_image" class="formbold-form-label"
+              >Upload RC Book Image</label
+            >
+            <input
+              type="file"
+              name="rc_image"
+              id="rc_image"
+              accept="image/*"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Reference Image of Vehicle -->
+          <div class="formbold-mb-5">
+            <label for="bike_image" class="formbold-form-label"
+              >Upload Reference Image of Bike</label
+            >
+            <input
+              type="file"
+              name="bike_image"
+              id="bike_image"
+              accept="image/*"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Bike Usage Duration -->
+          <div class="formbold-mb-5">
+            <label for="years_used" class="formbold-form-label"
+              >Number of Years Used</label
+            >
+            <input
+              type="number"
+              name="years_used"
+              id="years_used"
+              min="0"
+              max="50"
+              placeholder="e.g., 3"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Number of Owners -->
+          <div class="formbold-mb-5">
+            <label for="owners" class="formbold-form-label"
+              >Number of Previous Owners</label
+            >
+            <input
+              type="number"
+              name="owners"
+              id="owners"
+              min="1"
+              max="10"
+              placeholder="e.g., 2"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <button class="formbold-btn">Submit Details</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

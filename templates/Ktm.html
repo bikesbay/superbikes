@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/Ktm.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            889cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            135hp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            280 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            41 kmpl
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/Ktmnac-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The KTM RC8 is a pioneering Austrian superbike that broke new ground
+          in the liter-class segment. Powered by a 1,195cc 75° V-twin engine, it
+          delivers approximately 135 horsepower and 120 Nm of torque, propelling
+          the bike to speeds over 270 km/h. The RC8 features a lightweight steel
+          trellis frame and high-performance WP suspension, offering exceptional
+          agility and stability. Its aggressive design, highlighted by sharp
+          lines and distinctive orange accents, reflects KTM's racing DNA. With
+          its blend of power, precision, and bold aesthetics, the RC8 stands as
+          a testament to KTM's commitment to innovation in the superbike arena.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned KTM RC8e retains its aggressive,
+          race-inspired styling that makes it stand out on both the road and
+          track. The sharp, angular fairings and signature KTM orange accents
+          still maintain much of their original glossy finish, emphasizing the
+          bike’s sporty character. As with most used superbikes, there are minor
+          scratches on the bodywork from regular riding, but these are purely
+          cosmetic and do not affect performance or handling. Overall, the body
+          panels and frame remain in good condition, making this RC8e an
+          appealing choice for riders seeking a high-performance sport bike with
+          only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/Ktmnacimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics & Aerodynamics</h1>
+            <p class="features1-txt">
+              The bike is equipped with a 5-inch TFT display featuring an AIM
+              MXS 1.2 RACE data logger and built-in GPS for professional-level
+              telemetry. Rider aids include adjustable traction control,
+              anti-wheelie, engine brake control, and Quick shifter+ for
+              seamless gear changes. Its aerodynamic design incorporates
+              MotoGP-inspired winglets that generate downforce and improve
+              high-speed stability, ensuring the RC8e combines cutting-edge
+              technology with extreme track performance.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The KTM RC8e is powered by an 889cc LC8c parallel-twin engine,
+              derived from the KTM 890 Duke R but specifically tuned for track
+              performance. It produces 135 horsepower at 11,000 rpm and 98 Nm of
+              torque at 8,250 rpm. With a dry weight of just 142 kg, partly
+              thanks to carbon Kevlar-reinforced bodywork, the bike offers an
+              exceptional power-to-weight ratio. A full titanium Abramovic
+              racing exhaust further enhances performance and adds a signature
+              race-ready sound.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis and Handling</h1>
+            <p class="features1-txt">
+              The RC8e features a bespoke 25CrMo4 tubular steel frame for
+              rigidity and precise handling. Its race-developed WP Apex Pro
+              suspension includes a fully adjustable 43mm closed-cartridge front
+              fork and a fully adjustable rear monoshock. Braking duties are
+              handled by a race-spec Brembo system with Stylemark front calipers
+              on 290mm discs, while ultra-light forged aluminum Dymag wheels
+              reduce unsprang weight for sharper handling.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Ergonomics</h1>
+            <p class="features1-txt">
+              The KTM RC8e features a steel trellis frame optimized for dynamic
+              performance and precise handling. Its ergonomics are carefully
+              designed, with refined contact points on the fuel tank that
+              enhance rider connection and adjustable foot pegs to suit
+              different riding styles. The bike’s suspension includes a fully
+              adjustable WP Apex Open Cartridge front fork and an adjustable
+              rear monoshock, allowing riders to fine-tune handling for both
+              track and road conditions. Braking is handled by a
+              high-performance Brembo system with Hypure calipers, providing
+              confidence-inspiring stopping power under aggressive riding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}">Book Test Drive</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

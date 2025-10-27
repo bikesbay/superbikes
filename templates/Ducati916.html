@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/Ducati916.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            1099cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            220hp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            305 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            12 to 15.4 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/ducati-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The Ducati 916 is an iconic Italian superbike, celebrated for its
+          racing heritage and striking design. Powered by a 916cc V-twin engine
+          producing around 114 horsepower, it offers exhilarating performance
+          and a top speed of approximately 245 km/h. The bike combines advanced
+          engineering with rider-focused features, including a lightweight
+          trellis frame, sophisticated suspension, and high-performance Brembo
+          brakes, providing precise handling and stability. Its aggressive
+          styling, single-sided swingarm, and aerodynamic bodywork make it
+          instantly recognizable on both road and track. With its blend of
+          speed, agility, and timeless design, the Ducati 916 remains a
+          legendary choice for enthusiasts seeking a true race-inspired
+          superbike experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned Ducati 916 retains its iconic,
+          aggressive styling that has made it a standout on both roads and
+          tracks for decades. The paint still holds much of its glossy finish,
+          accentuating the bike’s sharp lines, single-sided swingarm, and
+          signature fairing design. As with most used superbikes, there are
+          minor scratches on the bodywork from regular riding, but these are
+          purely cosmetic and do not affect performance or handling. Overall,
+          the body panels remain in good condition, making this 916 an appealing
+          choice for riders who want a classic, race-inspired superbike with
+          only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/ducatiimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The Ducati 916 is powered by a 916cc V-twin engine with four
+              valves per cylinder and desmodromic valve actuation. This
+              liquid-cooled engine produces 114 bhp at 9,000 rpm and a peak
+              torque of 90 Nm at 6,900 rpm, enabling a top speed of
+              approximately 260 km/h (160 mph). It uses cam belts for precise
+              valve timing, combining high-performance engineering with
+              reliability to deliver an exhilarating riding experience.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Design & Aesthetics</h1>
+            <p class="features1-txt">
+              Designed by the legendary Massimo Tambourine, the Ducati 916 is
+              widely regarded as one of the most beautiful motorcycles ever
+              created. Its unslung exhaust and twin Terminomic silencers add
+              distinctive flair, while the ergonomics were carefully crafted to
+              provide comfort and achieve a balanced 50/50 weight distribution
+              for riders of various sizes.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis & Suspension</h1>
+            <p class="features1-txt">
+              The bike features a lightweight steel trellis frame that provides
+              a strong and rigid structure. Its single-sided swingarm enhances
+              both aesthetics and functionality, allowing faster wheel and tire
+              changes—a signature Ducati design element. Upside-down Showa forks
+              at the front, Ohlin's rear suspension, and Brembo brakes complete
+              the package, giving the 916 precise handling, stability, and
+              excellent stopping power.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Racing Heritage</h1>
+            <p class="features1-txt">
+              The Ducati 916 was a dominant force on the track, winning multiple
+              World Superbike Championships and earning a reputation as a
+              successful racing machine. Its design also emphasized ease of
+              maintenance for racing purposes, which was a key factor in its
+              competitive success and enduring legacy in the sport bike world.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}">Book Test Drive</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

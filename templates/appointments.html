@@ -1,0 +1,33 @@
+<div class="appointments-container">
+  <h2>My Appointments</h2>
+  {% if appointments %}
+  <table>
+    <thead>
+      <tr>
+        <th>Vehicle</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Area</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Post Code</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for appt in appointments %}
+      <tr>
+        <td>{{ appt.vehicle }}</td>
+        <td>{{ appt.date }}</td>
+        <td>{{ appt.time }}</td>
+        <td>{{ appt.area }}</td>
+        <td>{{ appt.city }}</td>
+        <td>{{ appt.state }}</td>
+        <td>{{ appt.post_code }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>You have not booked any appointments yet.</p>
+  {% endif %}
+</div>

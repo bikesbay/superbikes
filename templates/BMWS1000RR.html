@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/BMWS1000RR.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            999cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            210hp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            303 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            15.6 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/bmw-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The BMW S1000RR is a flagship superbike from Germany, celebrated for
+          its blend of high performance and advanced technology. Powered by a
+          999cc inline-four engine producing around 206 horsepower, it offers
+          blistering acceleration and can reach top speeds exceeding 300 km/h.
+          The bike is equipped with a sophisticated electronics package,
+          including multiple riding modes, traction control, cornering ABS,
+          launch control, and quickshifter, ensuring a perfect balance of power
+          and rider safety. Its lightweight chassis, premium suspension
+          components, and aerodynamic design with distinctive winglets deliver
+          exceptional handling and stability on both road and track. Combining
+          speed, precision, and cutting-edge features, the S1000RR is a top
+          contender for riders seeking a race-inspired superbike experience.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned BMW S1000RR retains its aggressive and
+          aerodynamic styling that instantly commands attention on both road and
+          track. The bike’s signature sharp lines and bold contours are
+          complemented by a glossy paint finish that still shines brightly,
+          emphasizing its sporty and high-performance nature. As expected with a
+          used superbike, there are minor scratches and scuffs on the fairings
+          and side panels, mainly from regular riding and parking, but these are
+          purely cosmetic and do not compromise the bike’s structural integrity
+          or handling. The iconic winglets and sleek bodywork remain intact,
+          preserving the aerodynamic efficiency for which the S1000RR is known.
+          Overall, the bike’s exterior is in good shape, making it an excellent
+          choice for riders looking for a powerful machine with only
+          subtle signs of use.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/bmwimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics and Technology</h1>
+            <p class="features1-txt">
+              Riding Modes: Includes multiple modes such as Rain, Road, Dynamic,
+              and Race, allowing riders to adjust the bike's performance
+              characteristics. ABS Pro: Switchable ABS with specific settings
+              for different riding modes, including a mode for racing slicks.
+              Dynamic Traction Control (DTC): Provides enhanced grip and
+              stability, with track-tuned settings available. Hill Start Control
+              Pro: An automatic feature that helps with starting on inclines. M
+              Sport Components: Option to equip M lightweight battery and
+              M Carbon wheels.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              Engine: A 999cc, water/oil-cooled, 4-stroke, 4-cylinder inline
+              engine with four titanium valves per cylinder. BMW ShiftCam:
+              Variable valve timing technology that enhances both low and
+              mid-range performance. Transmission: A 6-speed gearbox with a wet
+              multiplate clutch, including a bidirectional quick shifter. Power:
+              Delivers high horsepower and torque, with a maximum output of over
+              206 bhp at high RPM.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis and Handling</h1>
+            <p class="features1-txt">
+              Chassis: A bridge-type frame for rigidity and responsiveness.
+              Suspension: Fully adjustable suspension system, including
+              upside-down telescopic forks at the front and an aluminum swingarm
+              at the rear. Aerodynamic Winglets: Aircraft-inspired winglets
+              integrated into the fairing to generate downforce at high speeds,
+              improving stability.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Other Key Features</h1>
+            <p class="features1-txt">
+              TFT Display: A high-resolution TFT instrument panel that provides
+              a wealth of information and is easy to read. Bluetooth
+              Connectivity: Allows for mobile phone integration for navigation
+              and other features. Heated Grips: For enhanced comfort during
+              cooler riding conditions. Brake System: Features twin disc brakes
+              with four-piston radial calipers at the front and a single-piston
+              caliper at the rear.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

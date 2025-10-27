@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/Benelli.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            500cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            46.8 bhp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            160kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            20 to 30.16 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/trk-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The Benelli TRK 502 is a versatile adventure motorcycle from Italy,
+          designed for both on-road touring and off-road exploration. Powered by
+          a 499cc parallel-twin, liquid-cooled engine producing around 47
+          horsepower, it delivers smooth and manageable power suitable for long
+          rides and varied terrains. The bike features modern electronics
+          including ABS and ride-by-wire throttle for enhanced safety and
+          control. Its rugged chassis, long-travel suspension, and dual-purpose
+          tires ensure stability and comfort over different surfaces, while the
+          ergonomic design and spacious seating make it ideal for both rider and
+          passenger. With its combination of practicality, reliability, and
+          adventure-ready capabilities, the TRK 502 is an excellent choice for
+          riders seeking a comfortable and capable all-rounder.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned Benelli TRK 502 retains its rugged and
+          adventure-ready design, making it stand out on both highways and
+          off-road trails. The paint and bodywork still maintain much of their
+          original finish, highlighting the bike’s robust character and
+          practical styling. As with most used motorcycles, there are minor
+          scratches and scuffs from regular use, but these are purely cosmetic
+          and do not affect performance or handling. Overall, the body panels,
+          frame, and protective elements remain in good condition, making this
+          TRK 502 an appealing choice for riders seeking a capable and versatile
+          adventure bike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/trkimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics and Technology</h1>
+            <p class="features1-txt">
+              The bike comes with a digital instrument cluster, including a
+              Bluetooth-enabled 5-inch TFT display on the 2025 model. LED
+              lighting ensures visibility, while a tall windscreen, knuckle
+              guards, and a comfortable seat enhance comfort for both rider and
+              passenger. A substantial 20-liter fuel tank allows for extended
+              touring range, and a Tyre Pressure Monitoring System (TPMS) adds
+              an extra layer of safety.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The Benelli TRK 502 is powered by a 500cc, liquid-cooled,
+              parallel-twin engine with DOHC, producing approximately 46.9 bhp
+              (47.5 PS) at 8,500 rpm and 46 Nm of peak torque at 6,000 rpm. The
+              engine is paired with a smooth 6-speed gearbox and utilizes Bosch
+              electronic fuel injection (EFI) for efficient power delivery,
+              making it suitable for both city rides and long-distance touring.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis and Handling</h1>
+            <p class="features1-txt">
+              The TRK 502 features a sturdy steel trellis frame for stability
+              and agility. Front suspension consists of 50mm upside-down (USD)
+              telescopic forks with adjustable preload and rebound, while the
+              rear is equipped with a hydraulic monoshock absorber with
+              adjustment. Braking is handled by dual 320mm front discs and a
+              260mm rear disc, supported by a dual-channel ABS system that can
+              be switched off for off-road use, ensuring strong stopping power
+              and rider confidence.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Variants</h1>
+            <p class="features1-txt">
+              The TRK 502 is available in two versions: the standard TRK 502
+              with 17-inch alloy wheels, and the adventure-focused TRK 502X,
+              which features 19-inch front and 17-inch rear cross-spoke wheels
+              designed for enhanced off-road capability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/re.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            411cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            24.5bhp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            134 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            30 to 36.26 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/re-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The Royal Enfield Himalayan is a rugged adventure motorcycle from
+          India, designed for both on-road touring and off-road exploration.
+          Powered by a 411cc single-cylinder, air-cooled engine producing around
+          24.3 horsepower, it delivers manageable power suitable for long rides
+          and challenging terrain. The bike features modern electronics
+          including dual-channel ABS for safety and precise control. Its sturdy
+          frame, long-travel suspension, and dual-purpose tires provide
+          stability and comfort across diverse surfaces, while the upright
+          ergonomics and spacious seating ensure rider and passenger comfort.
+          With its combination of durability, practicality, and adventure-ready
+          capability, the Himalayan is an ideal choice for riders seeking a
+          reliable and versatile adventure motorcycle.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned Royal Enfield Himalayan retains its
+          rugged and utilitarian design, built to handle both city roads and
+          off-road trails. The paint and body panels still maintain much of
+          their original finish, highlighting the bike’s robust character and
+          adventure-ready styling. As with most used motorcycles, there are
+          minor scratches and scuffs from regular use, but these are purely
+          cosmetic and do not affect performance or handling. Overall, the
+          frame, bodywork, and protective elements remain in good condition,
+          making this Himalayan a reliable choice for riders seeking a durable
+          adventure bike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/reimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis & Suspension</h1>
+            <p class="features1-txt">
+              The bike features upside-down front forks that provide excellent
+              control and stability across varied terrain, while a linkage-type
+              monoshock rear suspension ensures a smooth and balanced ride. With
+              a substantial ground clearance of 230 mm and a robust twin-spar
+              tubular frame, the Himalayan is built to handle rugged paths and
+              challenging adventures with confidence.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The Royal Enfield Himalayan is powered by a modern, liquid-cooled
+              452cc single-cylinder engine in the latest Himalayan 450 model,
+              delivering strong and reliable performance. Older models feature a
+              411cc air-cooled engine paired with a 5-speed transmission. The
+              Himalayan 450 also includes multiple riding modes, allowing riders
+              to adapt power delivery to different conditions, making it
+              suitable for both city riding and challenging off-road terrain.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Braking & Wheels</h1>
+            <p class="features1-txt">
+              Durable spoke wheels are designed for adventure riding, with newer
+              models compatible with tubeless tyres for enhanced reliability.
+              Large wheel sizes—21-inch at the front and 17-inch at the
+              rear—provide superior off-road capability and stability over rough
+              surfaces.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Technology & Features</h1>
+            <p class="features1-txt">
+              The Himalayan is equipped with a digital instrument cluster that
+              displays essential riding information, along with a Tripper
+              Navigation system featuring a circular screen that provides
+              turn-by-turn guidance via Bluetooth connection to the Royal
+              Enfield app. An assist and slipper clutch improves gear shifting
+              smoothness and reduces rider effort, adding to the bike’s overall
+              practicality and comfort.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

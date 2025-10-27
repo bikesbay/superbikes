@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/Hayabusa.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            1340cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            190hp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            299 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            15 to 20 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/hayabusa-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The Suzuki Hayabusa is a legendary Japanese superbike, renowned for
+          its combination of high-speed performance and smooth touring
+          capability. Powered by a 1,340cc inline-four engine producing around
+          197 horsepower, it can reach top speeds of approximately 312 km/h,
+          making it one of the fastest production motorcycles in the world. The
+          bike features advanced electronics, including traction control, launch
+          control, and multiple riding modes, ensuring both safety and optimal
+          performance. Its aerodynamic bodywork, lightweight chassis, and robust
+          braking system provide stability and precise handling at extreme
+          speeds. With its blend of power, comfort, and cutting-edge technology,
+          the Hayabusa is a top choice for riders seeking a high-performance
+          motorcycle that excels both on the track and on long-distance rides.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned Suzuki Hayabusa retains its sleek,
+          aerodynamic design that has made it an icon on both highways and
+          tracks. The glossy paintwork still highlights the bike’s smooth,
+          flowing lines and muscular presence. As with most used motorcycles,
+          there are minor scratches and scuffs from regular use, but these are
+          purely cosmetic and do not affect performance or handling. Overall,
+          the body panels and frame remain in good condition, making this
+          Hayabusa an appealing choice for riders seeking a high-performance
+          superbike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/hayaimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics & Rider Aids (S.I.R.S.)</h1>
+            <p class="features1-txt">
+              The Hayabusa incorporates advanced electronics for enhanced
+              control and safety. A six-axis Bosch Inertial Measurement Unit
+              (IMU) monitors pitch, roll, and yaw, while the Suzuki Drive Mode
+              Selector Alpha (SDMS Alpha) allows riders to customize engine and
+              control settings. Motion Track Traction Control adjusts power
+              based on lean angle to prevent wheel spin, and a bi-directional
+              quick shift system enables clutchless upshifts and downshifts.
+              Additional aids include launch control with three modes, an active
+              speed limiter, cruise control, and engine brake control with three
+              settings for optimized stability.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The Suzuki Hayabusa is powered by a 1,340cc, liquid-cooled, DOHC,
+              inline-four engine that delivers robust power with smooth,
+              responsive delivery. It produces 190 PS of power and 150 Nm of
+              torque, providing exhilarating acceleration. The engine is paired
+              with a 6-speed transmission featuring an assist and slipper
+              clutch, ensuring smooth gear changes under all conditions.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Braking & Wheels</h1>
+            <p class="features1-txt">
+              Stopping power comes from Brembo Stylema® front calipers,
+              complemented by a switchable ABS system. The Motion Track Brake
+              System uses IMU data to control brake pressure and prevent wheel
+              lock, while slope-dependent control prevents rear wheel lift
+              during braking on inclines. Hill Hold Control automatically
+              engages the rear brake briefly when stopped on a slope, and the
+              bike runs on exclusively designed Bridgestone tyres for superior
+              grip and performance.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Other Key Features</h1>
+            <p class="features1-txt">
+              The Hayabusa features bright and efficient LED headlights and rear
+              combination lights for improved visibility. Its instrument cluster
+              combines analog and digital displays, providing real-time
+              information such as lean angle and acceleration. The aerodynamic
+              bodywork contributes to high-speed stability, while durable
+              engineering, including optimized crankshaft oil passages and
+              reinforced engine case threads, enhances the bike’s longevity and
+              reliability.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

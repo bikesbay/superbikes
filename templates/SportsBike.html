@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikes-Bay</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/SportsBike.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="HeroSection">
+      <div class="container">
+        <!-- Search section -->
+        <div class="search-section">
+          <input type="text" id="searchInput" placeholder=" Search bikes..." />
+        </div>
+
+        <!-- Blog cards -->
+        <div id="blogContainer">
+          <!-- Aprillia -->
+          <div class="blog-card" data-id="1">
+            <img
+              src="{{ url_for('static', filename='photos/aprillia.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('aprillia') }}">Aprillia RSV4</a></h3>
+              <div class="blog-meta">Aprillia | 01 Jan 2023 - 25</div>
+              <i>Engine 1099cc, HorsePower 220hp, Max Speed 305kmph</i> <br />
+              <i>Registration year: 2023, Number of Owners: 1</i>
+              <p>
+                <b>
+                  If you want to push it to the max, make sure you have the
+                  right gear.
+                </b>
+              </p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-1">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- BMW S1000RR -->
+          <div class="blog-card" data-id="2">
+            <img
+              src="{{ url_for('static', filename='photos/bmws1000rr.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('bmws1000rr') }}">BMW S1000RR</a></h3>
+              <div class="blog-meta">BMW | 22 Feb 2016 - 25</div>
+              <i>Engine 999cc, HorsePower 210hp, Max Speed 303kmph </i> <br />
+              <i>Registration year: 2016, Number of Owners: 2</i>
+              <p>
+                <b> Challenge your limits </b>
+              </p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-2">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Apache RR310 -->
+          <div class="blog-card" data-id="3">
+            <img
+              src="{{ url_for('static', filename='photos/tvs apache rr310.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('apache_rr310') }}">Apache RR310</a></h3>
+              <div class="blog-meta">Apache | 25 May 2024 - 25</div>
+              <i>Engine 312.2cc, HorsePower 37.48bhp, Max Speed 160kmph</i>
+              <br />
+              <i>Registration year: 2024, Number of Owners: 1</i>
+              <p>
+                <b> Crafted to impose </b>
+              </p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-3">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Yamaha MT-07 -->
+          <div class="blog-card" data-id="4">
+            <img
+              src="{{ url_for('static', filename='photos/yamaha mt-07.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('yamaha_mt07') }}">Yamaha MT-07</a></h3>
+              <div class="blog-meta">Yamaha | 12 Mar 2016 - 25</div>
+              <i>Engine 689cc, HorsePower 73.4 bhp, Max Speed 142kmph </i>
+              <br />
+              <i>Registration year: 2016, Number of Owners: 4</i>
+              <p>
+                <b> Revs your Heart </b>
+              </p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-4">&#9825;</i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comment Modal -->
+        <div class="modal" id="commentModal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modalBlogTitle">Comments</h3>
+            <ul class="comment-list" id="commentList"></ul>
+            <div class="comment-box">
+              <input
+                type="text"
+                id="commentInput"
+                placeholder="Write a comment..."
+              />
+              <button id="postComment">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book an Appointment</a
+                >
+              </li>
+
+              <li><a href="#Slider">Explore Now</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/Sportsbike.js') }}"></script>
+  </body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Form</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bookappointment.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <div class="formbold-main-wrapper">
+      <div class="formbold-form-wrapper">
+        <form
+          action="{{ url_for('book_appointment_page') }}"
+          method="POST"
+          id="appointmentForm"
+        >
+          <!-- Full Name -->
+          <div class="formbold-mb-5">
+            <label for="name" class="formbold-form-label">Full Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Full Name"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Email -->
+          <div class="formbold-mb-5">
+            <label for="email" class="formbold-form-label">Email Address</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Phone Number -->
+          <div class="formbold-mb-5">
+            <label for="phone" class="formbold-form-label">Phone Number</label>
+            <input
+              type="text"
+              name="phone"
+              id="phone"
+              placeholder="Enter your phone number"
+              class="formbold-form-input"
+              required
+            />
+          </div>
+
+          <!-- Vehicle Model Dropdown -->
+          <div class="formbold-mb-5">
+            <label for="vehicle" class="formbold-form-label"
+              >Preferred Vehicle Model</label
+            >
+            <select
+              name="vehicle"
+              id="vehicle"
+              class="formbold-form-input"
+              required
+            >
+              <option value="" disabled selected>Select your vehicle</option>
+              <option value="Aprillia RSV4">Aprillia RSV4</option>
+              <option value="BMW S1000RR">BMW S1000RR</option>
+              <option value="Apache RR310">Apache RR310</option>
+              <option value="Yamaha MT-07">Yamaha MT-07</option>
+              <option value="Ducati 916">Ducati 916</option>
+              <option value="KTM RC.8e">KTM RC.8e</option>
+              <option value="Kawasaki">Kawasaki</option>
+              <option value="Hayabusa">Hayabusa</option>
+              <option value="Benelli">Benelli</option>
+              <option value="Royal Enfield Himalayan">
+                Royal Enfield Himalayan
+              </option>
+              <option value="Triumph">Triumph</option>
+              <option value="KTM 390 Adventure">KTM 390 Adventure</option>
+            </select>
+          </div>
+
+          <!-- Date & Time -->
+          <div class="flex flex-wrap formbold--mx-3">
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="date" class="formbold-form-label">Date</label>
+                <input
+                  type="date"
+                  name="date"
+                  id="date"
+                  class="formbold-form-input"
+                  required
+                />
+              </div>
+            </div>
+            <div class="w-full sm:w-half formbold-px-3">
+              <div class="formbold-mb-5">
+                <label for="time" class="formbold-form-label"
+                  >Time (9:00 AM - 6:00 PM)</label
+                >
+                <input
+                  type="time"
+                  name="time"
+                  id="time"
+                  class="formbold-form-input"
+                  min="09:00"
+                  max="18:00"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Address Details -->
+          <div class="formbold-mb-5 formbold-pt-3">
+            <label class="formbold-form-label formbold-form-label-2"
+              >Address Details</label
+            >
+            <div class="flex flex-wrap formbold--mx-3">
+              <div class="w-full sm:w-half formbold-px-3">
+                <input
+                  type="text"
+                  name="area"
+                  id="area"
+                  placeholder="Enter area"
+                  class="formbold-form-input"
+                  required
+                />
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <input
+                  type="text"
+                  name="city"
+                  id="city"
+                  placeholder="Enter city"
+                  class="formbold-form-input"
+                  required
+                />
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <input
+                  type="text"
+                  name="state"
+                  id="state"
+                  placeholder="Enter state"
+                  class="formbold-form-input"
+                  required
+                />
+              </div>
+              <div class="w-full sm:w-half formbold-px-3">
+                <input
+                  type="text"
+                  name="post_code"
+                  id="post-code"
+                  placeholder="Post Code"
+                  class="formbold-form-input"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Driving License -->
+          <div class="formbold-mb-5">
+            <label class="formbold-form-label"
+              >Do you have a Driving License?</label
+            >
+            <div class="formbold-radio-group">
+              <label class="formbold-radio-label">
+                <input
+                  type="radio"
+                  name="driving_license"
+                  value="Yes"
+                  class="formbold-radio-input"
+                  required
+                />
+                Yes
+              </label>
+              <label class="formbold-radio-label">
+                <input
+                  type="radio"
+                  name="driving_license"
+                  value="No"
+                  class="formbold-radio-input"
+                  required
+                />
+                No
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit" class="formbold-btn">Book Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='js/appoint.js') }}"></script>
+  </body>
+</html>

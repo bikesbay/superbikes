@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Boxicons Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- ============================= -->
+    <!-- HEADER (Navigation Bar) -->
+    <!-- ============================= -->
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+
+      <!-- Navigation Links -->
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+
+        <!-- Conditional Profile Link -->
+        <li>
+          {% if session.get('username') %}
+          <a href="{{ url_for('dashboard') }}">Profile</a>
+          {% else %}
+          <a
+            href="#"
+            id="profile-link"
+            data-login-url="{{ url_for('show_login') }}"
+            >Profile</a
+          >
+          {% endif %}
+        </li>
+      </ul>
+    </header>
+
+    <!-- ============================= -->
+    <!-- HOME SECTION (Landing Section) -->
+    <!-- ============================= -->
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          Live the dream, <br />
+          ride the machine
+        </h1>
+        <p>
+          Your one-stop destination to fulfill your dream of owning a superbike.
+          <br />
+          Let your inner child free and rave the motor high.
+        </p>
+        <a href="#Slider" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- CAROUSEL SECTION -->
+    <!-- ============================= -->
+    <section class="sec-sec" id="Slider">
+      <div class="slider">
+        <!-- Main Image Slides -->
+        <div class="list">
+          <!-- Sports Bike Slide -->
+          <div class="item active">
+            <img
+              src="{{ url_for('static', filename='photos/Sports.png') }}"
+              alt=""
+            />
+            <div class="content">
+              <p>design</p>
+              <h2>Sports</h2>
+              <p>" Engineered for Speed "</p>
+              <br />
+              <a href="{{ url_for('sportsbike') }}" class="home-btn"
+                >View Bikes</a
+              >
+            </div>
+          </div>
+
+          <!-- Naked Bike Slide -->
+          <div class="item">
+            <img
+              src="{{ url_for('static', filename='photos/naked.png') }}"
+              alt=""
+            />
+            <div class="content">
+              <p>design</p>
+              <h2>Naked</h2>
+              <p>" Unleash Your Riding Spirit "</p>
+              <br />
+              <a href="{{ url_for('nacked') }}" class="home-btn">View Bikes</a>
+            </div>
+          </div>
+
+          <!-- Tourer Bike Slide -->
+          <div class="item">
+            <img
+              src="{{ url_for('static', filename='photos/TrourerBike.jpeg') }}"
+              alt=""
+            />
+            <div class="content">
+              <p>design</p>
+              <h2>Tourer</h2>
+              <p>" emphasize themes of freedom "</p>
+              <br />
+              <a href="{{ url_for('trourer') }}" class="home-btn">View Bikes</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="arrows">
+          <button id="prev"><</button>
+          <button id="next">></button>
+        </div>
+
+        <!-- Thumbnail Previews -->
+        <div class="thumbnail">
+          <div class="item active">
+            <img
+              src="{{ url_for('static', filename='photos/Sports.png') }}"
+              alt=""
+            />
+            <div class="content">
+              <span class="ggg">Sports Bikes</span>
+            </div>
+          </div>
+          <div class="item">
+            <img
+              src="{{ url_for('static', filename='photos/naked.png') }}"
+              alt=""
+            />
+            <div class="content">Naked Bikes</div>
+          </div>
+          <div class="item">
+            <img
+              src="{{ url_for('static', filename='photos/TrourerBike.jpeg') }}"
+              alt=""
+            />
+            <div class="content">Tourer Bikes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FOR SELLER SECTION -->
+    <!-- ============================= -->
+    <section class="">
+      <h1 class="header-txt">FOR THE <span>SELLERS</span></h1>
+      <div class="royal-enfield-section">
+        <div class="re-container">
+          <div class="re-image">
+            <div>
+              <img
+                src="{{ url_for('static', filename='photos/Aprillia.jpg') }}"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="re-content">
+            <h1>YOUR BIKE DESERVES A NEW JOURNEY</h1>
+            <p>
+              Whether you're upgrading, exchanging, or simply selling, we help
+              you get the best value for your bike. Find the right buyer, make
+              the smart deal, and let your ride begin a new chapter with someone
+              new.
+            </p>
+            <a href="{{ url_for('sell_bike_page') }}" class="re-btn"
+              >Sell Your Motorcycle</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="test">
+      <div class="responsive-container-block big-container">
+        <div class="responsive-container-block bg">
+          <p class="text-blk title">Testimonials</p>
+          <p class="text-blk desc">"What Our Riders Say About Bikes Bay"</p>
+          <div class="responsive-container-block blocks">
+            <div
+              class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content"
+            >
+              <p class="text-blk info-block">
+                "I was nervous about buying a second-hand bike online, but Bikes
+                Bay made everything simple. The bikes are in excellent
+                condition, the team is quick to help, and the process was
+                completely transparent. I’m loving my new ride!"
+              </p>
+              <div class="responsive-container-block person">
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+                >
+                  <img
+                    class="profile-img"
+                    src="{{ url_for('static', filename='photos/icon6.png') }}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+                >
+                  <p class="text-blk name">Srushti borhade</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content"
+            >
+              <p class="text-blk info-block">
+                "Bikes Bay made selling my old bike incredibly smooth. I listed
+                it in minutes, and within days, I had serious buyers contacting
+                me. The platform is trustworthy, easy to use, and saved me so
+                much time. Definitely my go-to for any bike resale!"
+              </p>
+              <div class="responsive-container-block person">
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+                >
+                  <img
+                    class="profile-img"
+                    src="{{ url_for('static', filename='photos/icon6.png') }}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+                >
+                  <p class="text-blk name">Jigyasa gawas</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="responsive-cell-block wk-desk-1 wk-tab-1 wk-mobile-1 wk-ipadp-1 content bottom"
+            >
+              <p class="text-blk info-block">
+                "I was a bit nervous buying a second-hand bike online, but Bikes
+                Bay exceeded my expectations. The bikes are well-maintained, the
+                team is responsive, and the entire process was transparent. I
+                love my new ride and will be coming back for my next one!"
+              </p>
+              <div class="responsive-container-block person">
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 icon-block"
+                >
+                  <img
+                    class="profile-img"
+                    src="{{ url_for('static', filename='photos/icon6.png') }}"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 text-block"
+                >
+                  <p class="text-blk name">Rahul waghmare</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- FOOTER SECTION -->
+    <!-- ============================= -->
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <!-- Quick Links -->
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('sell_bike_page') }}"
+                  >Sell Your Motorcycle</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Support Info -->
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, Parande Nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <!-- Social Links -->
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- JavaScript -->
+    <!-- ============================= -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

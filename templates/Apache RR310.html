@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/ApacheRR310.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            312.2cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            37.48bhp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            160kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            34.7 km/l
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/apache-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The TVS Apache RR 310 is a premium sportbike from India, designed to
+          deliver race-inspired performance in an accessible package. Powered by
+          a 312cc single-cylinder, liquid-cooled engine with a reverse-inclined
+          layout, it produces around 34 horsepower and reaches speeds up to 160
+          km/h. With multiple riding modes, throttle-by-wire, and dual-channel
+          ABS, it balances performance and safety. Its trellis frame, KYB
+          suspension, and aerodynamic fairing ensure sharp handling and
+          stability, while the digital display, lap timer, and Michelin tyres
+          add modern appeal. Combining agility, technology, and style, the RR
+          310 is an excellent choice for riders seeking an entry-level sportbike
+          that blends thrill with everyday usability.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned TVS Apache RR 310 continues to showcase
+          its sharp, fully-faired design that gives it a premium, race-inspired
+          look. The red-and-black paint scheme still holds much of its shine,
+          emphasizing the bike’s sporty appeal. Like most used sportbikes, there
+          are a few minor scratches on the fairing and side panels from regular
+          use, but these are purely cosmetic and do not impact performance or
+          safety. Overall, the bodywork and panels remain solid, making this RR
+          310 an attractive option for riders who want a stylish, aerodynamic
+          sportbike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/apacheimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics and Technology</h1>
+            <p class="features1-txt">
+              A 5-inch color TFT display that serves as the instrument cluster
+              and allows easy selection of ride modes. The system supports
+              Bluetooth connectivity, enabling smartphone integration for added
+              convenience. Riders can also use the SmartXonnect app, which
+              offers features such as race analytics, ride pattern analysis, and
+              turn-by-turn navigation. Multiple riding modes—Track, Urban, Rain,
+              and Sport—further enhance the experience by adjusting engine power
+              delivery and electronic settings to suit different conditions.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The TVS Apache RR 310 is powered by a 312.2cc, single-cylinder,
+              reverse-inclined, four-valve, liquid-cooled engine that adapts its
+              performance based on the selected riding mode. In Urban and Rain
+              modes, it delivers 25.8 PS, while in Sport and Track modes it
+              produces up to 34 PS on older models and 38 PS on newer ones.
+              Torque output also varies with the mode, offering stronger
+              performance in Sport and Track settings. The engine is paired with
+              a smooth 6-speed gearbox, and an optional bi-directional
+              quickshifter enhances the riding experience by enabling clutchless
+              upshifts and downshifts.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis and Handling</h1>
+            <p class="features1-txt">
+              An inverted telescopic fork at the front and a two-arm swingarm at
+              the rear, providing a balance of comfort and sporty handling. For
+              riders seeking more precision, an optional Dynamic Kit is
+              available, which equips the bike with fully adjustable KYB front
+              and rear suspension. Its specially designed sportbike chassis
+              further enhances performance-oriented handling, making the RR 310
+              stable and agile on both road and track.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Safety & Handling</h1>
+            <p class="features1-txt">
+              A range of advanced safety and handling features, especially with
+              the optional Dynamic Pro kit. Cornering ABS enhances braking
+              stability while leaning, and cornering traction control helps
+              prevent rear-wheel slip during turns. Launch control
+              electronically manages throttle input for optimal acceleration
+              from a standstill, while cornering drag torque control balances
+              engine braking to avoid skidding in corners. Additionally, a tyre
+              pressure monitoring system (TPMS) keeps track of tyre health and
+              alerts the rider if pressure falls outside the recommended range,
+              ensuring both performance and safety.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

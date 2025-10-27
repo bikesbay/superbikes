@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikes-Bay</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/trourer.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+         <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="HeroSection">
+      <div class="container">
+        <!-- Search section -->
+        <div class="search-section">
+          <input type="text" id="searchInput" placeholder=" Search bikes..." />
+        </div>
+
+        <!-- Blog cards -->
+        <div id="blogContainer">
+          <!-- Benelli TRK 502 -->
+          <div class="blog-card" data-id="1">
+            <img
+              src="{{ url_for('static', filename='photos/beneli trk 502.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('benelli') }}">Benelli</a></h3>
+              <div class="blog-meta">Benelli TRK 502 | 20 Sept 2019 - 25</div>
+              <i>Engine 500cc, HorsePower 46.8 bhp, Max Speed 160 kmph</i>
+              <p><b> Pure passion since 1911 </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-1">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Royal Enfield Himalayan -->
+          <div class="blog-card" data-id="2">
+            <img
+              src="{{ url_for('static', filename='photos/royal enfield himalayan.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('re') }}">Royal Enfield</a></h3>
+              <div class="blog-meta">
+                Royal Enfield Himalayan | 02 Aug 2016 - 25
+              </div>
+              <i>Engine 411cc, HorsePower 24.5 bhp, Max Speed 134 kmph</i>
+              <p><b> Made Like a Gun </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-2">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Triumph Tiger 900 -->
+          <div class="blog-card" data-id="3">
+            <img
+              src="{{ url_for('static', filename='photos/triumph tiger 900.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('triumph') }}">Triumph</a></h3>
+              <div class="blog-meta">Triumph Tiger 900 | 30 Aug 2018 - 25</div>
+              <i>Engine 888cc, HorsePower 106.5 bhp, Max Speed 202 kmph</i>
+              <p><b> Go Beyond </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-3">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- KTM 390 Adventure -->
+          <div class="blog-card" data-id="4">
+            <img
+              src="{{ url_for('static', filename='photos/ktm 390 adventure.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('ktm2') }}">KTM</a></h3>
+              <div class="blog-meta">KTM 390 Adventure | 04 Apr 2019 - 25</div>
+              <i>Engine 398.63cc, HorsePower 45.3 bhp, Max Speed 155 kmph</i>
+              <p><b> MAKE LIFE A DARING ADVENTURE </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-4">&#9825;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comment Modal -->
+      <div class="modal" id="commentModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="modalBlogTitle">Comments</h3>
+          <ul class="comment-list" id="commentList"></ul>
+          <div class="comment-box">
+            <input
+              type="text"
+              id="commentInput"
+              placeholder="Write a comment..."
+            />
+            <button id="postComment">Post</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/trourer.js') }}"></script>
+  </body>
+</html>

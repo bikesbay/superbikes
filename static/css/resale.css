@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #221314;
+  --main-color: #6a64f1;
+  --mat-color: #1d1d1d;
+}
+
+/* Body */
+body {
+  font-family: "Inter", sans-serif;
+  background: url(../photos/LoginMainBG.jpg) no-repeat center center/cover;
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mat-color);
+  padding: 20px 15%;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--bg-color);
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--bg-color);
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Main Wrapper */
+.formbold-main-wrapper {
+  margin-top: 100px;
+  display: flex;
+  align-items: flex-start; /* slightly higher positioning */
+  justify-content: center;
+  min-height: 80vh;
+  padding: 40px;
+}
+
+/* Form Card */
+.formbold-form-wrapper {
+  width: 100%;
+  max-width: 750px; /* wider layout */
+  background: #fff;
+  padding: 45px 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Heading */
+.formbold-form-label-2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1d1d1d;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+/* Labels */
+.formbold-form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #07074d;
+  margin-bottom: 10px;
+}
+
+/* Input & Textarea */
+.formbold-form-input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.formbold-form-input:focus {
+  border-color: var(--main-color);
+  box-shadow: 0 0 6px rgba(106, 100, 241, 0.3);
+}
+
+textarea.formbold-form-input {
+  resize: none;
+  height: 100px;
+}
+
+/* File Inputs */
+input[type="file"] {
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  background-color: #fafafa;
+  font-size: 15px;
+  color: #333;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+  background-color: var(--main-color);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #5b53e0;
+}
+
+/* Button */
+.formbold-btn {
+  width: 100%;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--main-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.formbold-btn:hover {
+  background-color: #5b53e0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .formbold-form-wrapper {
+    padding: 30px 25px;
+    max-width: 90%;
+  }
+  header {
+    padding: 15px 8%;
+  }
+  .logo {
+    font-size: 28px;
+  }
+}

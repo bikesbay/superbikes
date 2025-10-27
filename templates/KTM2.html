@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/KTM2.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            398.63 cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            45.3 bhp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            155 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            30-32 kmpl
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/kt390bike-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The KTM 390 Adventure is a compact adventure motorcycle designed for
+          riders seeking agility, versatility, and off-road capability. Powered
+          by a 373cc single-cylinder, liquid-cooled engine producing around 44
+          horsepower, it delivers responsive and manageable performance for both
+          city streets and light off-road trails. The bike features advanced
+          electronics such as ride-by-wire throttle, multiple riding modes, and
+          switchable ABS to enhance safety and control. Its lightweight chassis,
+          long-travel suspension, and upright ergonomics provide stability,
+          comfort, and confidence over varied terrain. With its combination of
+          technology, performance, and adventure-ready design, the KTM 390
+          Adventure is an ideal choice for riders looking for a nimble and
+          capable all-rounder for touring and off-road exploration.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned KTM 390 Adventure retains its rugged
+          and purposeful adventure design, built to perform on both city streets
+          and light off-road trails. The paint and body panels still maintain
+          much of their original finish, highlighting the bike’s sporty and
+          durable character. As with most used motorcycles, there are minor
+          scratches and scuffs from regular use, but these are purely cosmetic
+          and do not affect performance or handling. Overall, the frame,
+          fairings, and protective elements remain in good condition, making
+          this 390 Adventure a reliable choice for riders seeking a nimble and
+          capable adventure bike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/kt390image-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics and Technology</h1>
+            <p class="features1-txt">
+              The KTM 390 Adventure comes equipped with advanced electronics to
+              enhance rider control and safety. Cornering MTC (Motorcycle
+              Traction Control) ensures optimal traction even when leaned, while
+              Cornering ABS and Off-Road ABS provide superior braking confidence
+              across surfaces. Riders can choose from three ride modes—Street,
+              Rain, and Off-Road—offering different throttle maps and ABS
+              calibrations. The bike also features Quickshifter+ for clutchless
+              up and down shifts, cruise control for long rides, and a 5-inch
+              TFT display that provides comprehensive information and
+              connectivity.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">WP Apex Suspension</h1>
+            <p class="features1-txt">
+              The long-travel WP Apex suspension offers 200mm of front travel
+              and 205mm at the rear, ensuring comfort and control on rough
+              terrain. Adjustable preload and rebound on the shock absorber
+              allow riders to tailor the suspension to various riding
+              conditions, providing stability and a smooth ride.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Ergonomics and Chassis</h1>
+            <p class="features1-txt">
+              The bike’s rally-inspired design provides agility for both
+              standing and seated riding positions. Increased ground clearance
+              enhances protection and handling on varied surfaces, while an
+              aluminum bash plate adds extra protection for critical components
+              during off-road adventures.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Durable Wheels & Tires</h1>
+            <p class="features1-txt">
+              The KTM 390 Adventure is fitted with 21-inch front and 17-inch
+              rear spoke wheels, designed for durability and off-road capability
+              on dirt trails. Tubeless tires add convenience and reliability for
+              both on- and off-road riding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}">Book Test Drive</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

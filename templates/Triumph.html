@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/Triumph.css') }}"
+    />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-text">
+        <h1>
+          TAKE YOUR <br />
+          SOULS TO DRIVE
+        </h1>
+        <div class="ShortContainer">
+          <p class="ShortMoto">
+            Engine <br />
+            888cc
+          </p>
+          <p class="ShortMoto">
+            HorsePower <br />
+            106.5 bhp
+          </p>
+          <p class="ShortMoto">
+            Max Speed <br />
+            202 kmph
+          </p>
+          <p class="ShortMoto">
+            Mileage <br />
+            21.2 kmpl
+          </p>
+        </div>
+        <a href="#bike-overview" class="home-btn">Explore now</a>
+      </div>
+    </section>
+
+    <section class="bike-overview" id="bike-overview">
+      <div>
+        <img
+          src="{{ url_for('static', filename='photos/trimbike-overview.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+      <div class="overview-txt">
+        <h1 class="overview-main">Overview</h1>
+        <p class="overview-p">
+          The Triumph Tiger 900 is a versatile adventure motorcycle from the UK,
+          designed to excel on both highways and rugged off-road trails. Powered
+          by an 888cc inline-three engine producing around 94 horsepower, it
+          delivers smooth, responsive performance suitable for long-distance
+          touring and technical terrain. The bike features advanced electronics,
+          including multiple riding modes, traction control, and cornering ABS,
+          ensuring safety and precise handling in diverse conditions. Its
+          lightweight chassis, long-travel suspension, and ergonomic design
+          provide stability and comfort for both rider and passenger. With its
+          blend of power, technology, and adventure-ready capability, the Tiger
+          900 is a top choice for riders seeking a reliable and versatile
+          all-rounder for touring and off-road adventures.
+        </p>
+      </div>
+    </section>
+
+    <section class="bike-exterior" id="bike-exterior">
+      <div class="exterior-txt">
+        <h1 class="exterior-main">Exterior</h1>
+        <p class="exterior-p">
+          The exterior of this pre-owned Triumph Tiger 900 retains its rugged
+          and adventure-ready design, built to handle both highways and off-road
+          trails. The paintwork and body panels still maintain much of their
+          original finish, highlighting the bike’s robust character and
+          practical styling. As with most used adventure motorcycles, there are
+          minor scratches and scuffs from regular use, but these are purely
+          cosmetic and do not affect performance or handling. Overall, the
+          frame, fairings, and protective elements remain in good condition,
+          making this Tiger 900 a reliable choice for riders seeking a durable
+          adventure bike with only light signs of wear.
+        </p>
+      </div>
+      <div>
+        <img
+          class="exterior-img"
+          src="{{ url_for('static', filename='photos/trimimage-to-the-right.jpg') }}"
+          alt=""
+          width="800px"
+          height="480px"
+        />
+      </div>
+    </section>
+
+    <!-- features -->
+
+    <section class="features">
+      <div>
+        <h1 class="features-heading">FEATURE HIGHLIGHTS</h1>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Electronics and Technology</h1>
+            <p class="features1-txt">
+              Both GT and Rally Pro models feature a full-color 7-inch TFT
+              display with the "My Triumph Connectivity System" for navigation,
+              music, and calls. Riding modes include Road, Rain, Sport, and
+              Off-Road, with the Rally Pro adding Off-Road Pro and a
+              Rider-configurable mode. Optimized cornering ABS and advanced
+              traction control provide enhanced stability and grip across
+              various conditions.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Engine & Performance</h1>
+            <p class="features1-txt">
+              The Triumph Tiger 900 is powered by an 888cc liquid-cooled,
+              in-line 3-cylinder engine with a T-plane crank, delivering 108 PS
+              at 9,500 rpm and 90 Nm of torque at 6,850 rpm. It features a
+              6-speed gearbox with a wet, multi-plate, slip-and-assist clutch,
+              and the Rally Pro/GT Pro variants include a bi-directional
+              quickshifter. The 20-liter fuel tank ensures long-range touring
+              capability.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="features-parent">
+        <div class="features-left">
+          <div>
+            <h1 class="features1-main">Chassis and Brakes</h1>
+            <p class="features1-txt">
+              The Tiger 900 is built on a tubular steel trellis frame with a
+              bolt-on aluminum subframe. Suspension and wheel specifications
+              vary between the GT and Rally Pro models to suit their respective
+              purposes, offering optimized handling and comfort for both touring
+              and off-road adventure riding.
+            </p>
+          </div>
+        </div>
+        <div class="featuresright">
+          <div>
+            <h1 class="features1-main">Other Features</h1>
+            <p class="features1-txt">
+              Cruise control, all-LED lighting with signature DRL, heated grips
+              (standard on Pro models), heated seats (Pro variants), and a USB
+              power socket complete the Tiger 900’s touring-friendly setup.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="Contact" id="contact">
+      <div class="footer">
+        <div class="Main">
+          <div class="list">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="{{ url_for('contactUs') }}">Contact Us</a></li>
+              <li>
+                <a href="{{ url_for('book_appointment_page') }}"
+                  >Book Test Drive</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Shrutiuttekar12@gmail.com</a></li>
+              <li><a href="">+91 7774831000</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Conatct Info</h4>
+            <ul>
+              <li><a href="">Dighi, parande nagar</a></li>
+              <li><a href="">18.6166° N, 73.8724° E</a></li>
+            </ul>
+          </div>
+
+          <div class="list">
+            <h4>Connect</h4>
+            <div class="social">
+              <a href=""><i class="bx bxl-instagram"></i></a>
+              <a href=""><i class="bx bxl-facebook-square"></i></a>
+              <a href=""><i class="bx bxl-gmail"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='js/StandardAll.js') }}"></script>
+  </body>
+</html>

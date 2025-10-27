@@ -1,0 +1,229 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+  transition: ease 0.4s;
+}
+
+:root {
+  --bg-color: #fff;
+  --text-color: #221314;
+  --second-color: #5a7184;
+  --main-color: #6e54fa;
+  --mat-color: #1d1d1d;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 80px; /* fixed height */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+  padding: 0 15%;
+  transition: transform 0.4s ease, background 0.4s ease;
+  transform: translateY(0);
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar a {
+  color: var(--bg-color);
+  font-size: var(--p-font);
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: ease 0.4s;
+}
+
+.navbar a:hover {
+  background: var(--bg-color);
+  border-radius: 100px;
+  color: var(--mat-color);
+}
+
+header.sticky {
+  border-radius: 0px;
+  background: var(--mat-color);
+  padding: 10px 14%;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+.home {
+  /* padding: 80px 15%; */
+  width: 100%;
+  height: 100vh;
+  background: url(../photos/aboutback.jpg) no-repeat center center/cover;
+
+  /* Center content */
+  display: flex;
+  justify-content: center; /* horizontal center */
+  align-items: center; /* vertical center */
+}
+
+.home-text h1 {
+  color: var(--bg-color);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 40px;
+  text-align: center;
+  max-width: 800px; /* optional for better layout */
+}
+
+.abt-txt {
+  margin-top: 50px;
+}
+
+.abtmain-txt {
+  font-size: 32px;
+  text-align: center;
+  align-items: center;
+}
+
+.abtp-txt {
+  font-size: 16px;
+  text-align: justify;
+  padding: 80px 20%;
+}
+
+/* Section Styling */
+.services-section {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Heading */
+.services-section h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+}
+
+/* Container */
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* Box Styling */
+.service-box {
+  width: 250px;
+  background: #fff;
+  border: 1.5px solid #ddd;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons */
+.service-box img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 15px;
+  filter: invert(21%) sepia(97%) saturate(7489%) hue-rotate(352deg)
+    brightness(92%) contrast(98%);
+}
+
+/* Text */
+.service-box h3 {
+  font-size: 18px;
+  color: #222;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* footer */
+.Contact {
+  padding: 80px 15%;
+}
+
+#contact {
+  background: var(--mat-color);
+}
+
+.Main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer {
+  padding: 20px 0px;
+}
+
+.list {
+  width: 25%;
+}
+
+.list h4 {
+  font-size: 21px;
+  color: var(--bg-color);
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.list h4::before {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 60px;
+  left: 0;
+  bottom: -10px;
+  background: var(--bg-color);
+}
+
+.list ul li:not(last-child) {
+  margin-bottom: 16px;
+}
+
+.list ul li a {
+  color: rgb(194, 193, 193);
+  display: block;
+  transition: 0.3s;
+}
+
+.list ul li a:hover {
+  color: var(--bg-color);
+  transform: translateX(14px);
+}
+
+.social a i {
+  color: white;
+  font-size: 24px;
+}

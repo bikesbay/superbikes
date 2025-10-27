@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bikes-Bay</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/SportsBike.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">Bikes-Bay</a>
+      <ul class="navbar">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('show_login') }}">Login</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('contactUs') }}">Contact & Support</a></li>
+        <li><a href="{{ url_for('dashboard') }}">Profile</a></li>
+      </ul>
+    </header>
+
+    <section class="HeroSection">
+      <div class="container">
+        <!-- Search section -->
+        <div class="search-section">
+          <input type="text" id="searchInput" placeholder=" Search bikes..." />
+        </div>
+
+        <!-- Blog cards -->
+        <div id="blogContainer">
+          <!-- Ducati 916 -->
+          <div class="blog-card" data-id="1">
+            <img
+              src="{{ url_for('static', filename='photos/Ducati 916.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('ducati916') }}">Ducati 916</a></h3>
+              <div class="blog-meta">Ducati | 29 Sept 2020 - 25</div>
+              <i>Engine 916cc, HorsePower 114hp, Max Speed 161.5 mph </i>
+              <p><b> Fusion of Style, Sophistication, and Performance </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-1">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- KTM RC.8e -->
+          <div class="blog-card" data-id="2">
+            <img
+              src="{{ url_for('static', filename='photos/ktm rc.8e.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('ktm') }}">KTM RC.8e</a></h3>
+              <div class="blog-meta">KTM | 21 Nov 2020 - 25</div>
+              <i>Engine 889cc, HorsePower 135hp, Max Speed 280 kmph </i>
+              <p><b> Ready to race </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-2">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Kawasaki H2R -->
+          <div class="blog-card" data-id="3">
+            <img
+              src="{{ url_for('static', filename='photos/kawasaki ninja h3r.png') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('kawasaki') }}">Kawasaki</a></h3>
+              <div class="blog-meta">Kawasaki ninja H2R | 25 Dec 2017 - 25</div>
+              <i>Engine 998cc, HorsePower 310hp, Max Speed 400 kmph </i>
+              <p><b> Ultimate track-only beast's can handle </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-3">&#9825;</i>
+            </div>
+          </div>
+
+          <!-- Hayabusa -->
+          <div class="blog-card" data-id="4">
+            <img
+              src="{{ url_for('static', filename='photos/hayabusa.jpg') }}"
+              alt=""
+            />
+            <div class="blog-content">
+              <h3><a href="{{ url_for('hayabusa') }}">Hayabusa</a></h3>
+              <div class="blog-meta">Hayabusa | 20 Apr 2015 - 25</div>
+              <i>Engine 1340cc, HorsePower 190hp, Max Speed 299 kmph </i>
+              <p><b> seamless wave of power </b></p>
+            </div>
+            <div class="like-btn">
+              <i class="heart-icon" id="heart-4">&#9825;</i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comment Modal -->
+      <div class="modal" id="commentModal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="modalBlogTitle">Comments</h3>
+          <ul class="comment-list" id="commentList"></ul>
+          <div class="comment-box">
+            <input
+              type="text"
+              id="commentInput"
+              placeholder="Write a comment..."
+            />
+            <button id="postComment">Post</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/nacked.js') }}"></script>
+  </body>
+</html>

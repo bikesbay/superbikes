@@ -1,0 +1,361 @@
+/* Reset and Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --bg-color: #fff;
+  --text-color: #221314;
+  --second-color: #5a7184;
+  --main-color: #6e54fa;
+  --mat-color: #1d1d1d;
+}
+
+/* General Styling */
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background-color: #f5f6fa;
+  color: #222;
+}
+
+/* Navbar */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--mat-color);
+  padding: 20px 15%;
+  transition: ease 0.4s;
+}
+
+.logo {
+  font-size: 35px;
+  font-weight: 600;
+  color: var(--bg-color);
+  font-family: "Roboto", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* Navbar Links */
+.navbar {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+}
+
+.navbar a {
+  color: var(--bg-color);
+  font-weight: 500;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: ease 0.4s;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  background: var(--bg-color);
+  color: var(--text-color);
+  box-shadow: 5px 10px 30px rgb(85 85 85 / 20%);
+  border-radius: 4px;
+}
+
+header.sticky {
+  background: var(--mat-color);
+  padding: 20px 14%;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+}
+
+/* Space below navbar */
+.main--container {
+  margin-top: 81px;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0%;
+  flex-wrap: wrap;
+}
+
+/* Dashboard Topbar */
+.dashboard-topbar {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 0px;
+  border-radius: 100px;
+}
+
+.dashboard-topbar .user-greeting {
+  font-weight: 500;
+  color: #f3f3f3;
+  background: #1d1d1d;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.dashboard-topbar .logout-btn {
+  background-color: #e63946;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.dashboard-topbar .logout-btn:hover {
+  background-color: #c92a37;
+  transform: translateY(-2px);
+}
+
+/* Sidebar */
+.sidebar {
+  margin-left: 20px;
+  width: 240px;
+  background-color: #fff;
+  min-height: calc(100vh - 81px);
+  padding: 1.5rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  border-radius: 40px;
+}
+
+.sidebar h2 {
+  margin-bottom: 0.5rem;
+}
+
+.username {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.menu-title {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5rem 0;
+}
+
+.sidebar-menu li {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0;
+  color: #444;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-menu li:hover {
+  color: var(--main-color);
+}
+
+.sidebar-menu li i {
+  margin-right: 10px;
+}
+
+/* Wishlist Section */
+.wishlist-container {
+  flex: 1;
+  background-color: #f7f8fb;
+  padding: 20px;
+  border-radius: 8px;
+  min-height: calc(100vh - 81px);
+}
+
+.wishlist-container h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.wishlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.wishlist-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.wishlist-card:hover {
+  transform: translateY(-5px);
+}
+
+.wishlist-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.wishlist-card h3 {
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  .navbar a {
+    padding: 8px 14px;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+    padding: 15px 5%;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+
+  .wishlist-container {
+    min-height: auto;
+  }
+
+  .dashboard-topbar {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .dashboard-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+.sidebar-menu li {
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 20px; /* optional: rounded corners on hover */
+}
+
+/* Hover effect */
+.sidebar-menu li:hover {
+  background-color: var(--mat-color);
+  color: white;
+}
+
+/* Ensure icons also change color on hover */
+.sidebar-menu li:hover i {
+  color: white;
+}
+
+/* Active item styling */
+.sidebar-menu li.active {
+  background-color: var(--mat-color); /* or any color you want for active */
+  color: white;
+}
+
+.sidebar-menu li.active i {
+  color: white;
+}
+
+.appointments-container {
+  margin-top: 30px;
+}
+
+.appointments-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.appointment-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.appointment-card h3 {
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.appointment-card p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Make logout link look like other sidebar items */
+.sidebar-menu li a.logout-link {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  color: inherit; /* same as sidebar text */
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+/* Hover effect */
+.sidebar-menu li a.logout-link:hover {
+  background-color: black;
+  color: white;
+}
+
+.sidebar-menu li a.logout-link:hover i {
+  color: white;
+}
+
+.app-txt {
+  margin-top: 20px;
+}
