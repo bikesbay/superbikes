@@ -15,14 +15,6 @@ import traceback
 app = Flask(__name__)
 app.secret_key = 'superbikes_secret_key'
 
-# --------------------------
-# MySQL Configuration
-# --------------------------
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Test@123'  
-app.config['MYSQL_DB'] = 'superbikes_db'
-
 mysql = MySQL(app)
 
 UPLOAD_FOLDER = 'static/uploads'
