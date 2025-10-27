@@ -487,7 +487,7 @@ def dashboard():
     appointments = [{"id": i[0], "vehicle": i[1], "date": i[2], "time": i[3], "area": i[4], "city": i[5]} for i in appt_items]
 
     cur.close()
-    return render_template('dashboard.html', username=session['username'], wishlist=wishlist, appointments=appointments)
+    return render_template('Dashboard.html', username=session['username'], wishlist=wishlist, appointments=appointments)
 
 
 
