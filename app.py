@@ -231,6 +231,7 @@ def book_appointment_page():
 def sell_bike_page():
     if request.method == 'POST':
         try:
+            # Get form fields (no file uploads)
             name = request.form['name']
             email = request.form['email']
             phone = request.form['phone']
@@ -239,22 +240,16 @@ def sell_bike_page():
             plate = request.form['plate']
             years_used = request.form['years_used']
             owners = request.form['owners']
-            rc_image = request.files['rc_image']
-            bike_image = request.files['bike_image']
 
-            rc_path = os.path.join(app.config['UPLOAD_FOLDER'], rc_image.filename)
-            bike_path = os.path.join(app.config['UPLOAD_FOLDER'], bike_image.filename)
-            rc_image.save(rc_path)
-            bike_image.save(bike_path)
-
+            # Save to database
             conn = get_db_connection()
             cur = conn.cursor()
             sql = """
                 INSERT INTO resale_bikes 
-                (name, email, phone, address, chassis, plate, rc_image, bike_image, years_used, owners)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                (name, email, phone, address, chassis, plate, years_used, owners)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
-            val = (name, email, phone, address, chassis, plate, rc_path, bike_path, years_used, owners)
+            val = (name, email, phone, address, chassis, plate, years_used, owners)
             cur.execute(sql, val)
             conn.commit()
             cur.close()
@@ -268,7 +263,9 @@ def sell_bike_page():
             flash("Something went wrong. Please try again.", "danger")
             return redirect(url_for('sell_bike_page'))
 
+    # Render form for GET request
     return render_template('resale.html')
+
 
 # --------------------------
 # Dashboard
