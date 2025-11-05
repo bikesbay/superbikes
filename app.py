@@ -206,7 +206,7 @@ def book_appointment_page():
                 return redirect(url_for('book_appointment_page'))
 
             # 💳 Create Razorpay Order (set amount in paise, e.g., ₹100 = 10000)
-            order_amount = 10000  # ₹100 appointment fee
+            order_amount = 200  # ₹2 appointment fee  # ₹100 appointment fee
             order_currency = 'INR'
             order = razorpay_client.order.create(dict(amount=order_amount, currency=order_currency, payment_capture=1))
 
