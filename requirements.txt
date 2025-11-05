@@ -2,3 +2,4 @@ Flask
 Flask-MySQLdb
 gunicorn
 mysql-connector-python
+python-dotenv
