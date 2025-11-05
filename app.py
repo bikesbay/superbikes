@@ -5,7 +5,13 @@ from mysql.connector import pooling
 from datetime import datetime, timedelta
 import traceback
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
+import razorpay
 
+# Initialize Razorpay client
+razorpay_client = razorpay.Client(auth=(
+    os.environ.get("RAZORPAY_KEY_ID"),
+    os.environ.get("RAZORPAY_KEY_SECRET")
+))
 
 # --------------------------
 # Flask App Initialization
@@ -199,20 +205,32 @@ def book_appointment_page():
                 flash(f'You can only book appointments from {min_date} onwards.', 'danger')
                 return redirect(url_for('book_appointment_page'))
 
+            # 💳 Create Razorpay Order (set amount in paise, e.g., ₹100 = 10000)
+            order_amount = 10000  # ₹100 appointment fee
+            order_currency = 'INR'
+            order = razorpay_client.order.create(dict(amount=order_amount, currency=order_currency, payment_capture=1))
+
+            # Save appointment before payment
             conn = get_db_connection()
             cur = conn.cursor()
-            query = """
-                INSERT INTO appointments 
-                (name, email, phone, vehicle, date, time, area, city, state, post_code, driving_license)
+            cur.execute("""
+                INSERT INTO appointments (name, email, phone, vehicle, date, time, area, city, state, post_code, driving_license)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-            """
-            cur.execute(query, (name, email, phone, vehicle, date_str, time, area, city, state, post_code, driving_license))
+            """, (name, email, phone, vehicle, date_str, time, area, city, state, post_code, driving_license))
             conn.commit()
             cur.close()
             conn.close()
 
-            flash('Appointment booked successfully!', 'success')
-            return redirect(url_for('home'))
+            # Render Razorpay checkout page
+            return render_template(
+                'razorpay_payment.html',
+                order=order,
+                name=name,
+                email=email,
+                phone=phone,
+                amount=order_amount,
+                razorpay_key=os.environ.get("RAZORPAY_KEY_ID")
+            )
 
         except Exception as e:
             print("Error booking appointment:", e)
@@ -221,6 +239,15 @@ def book_appointment_page():
             return redirect(url_for('book_appointment_page'))
 
     return render_template('BookAppointment.html')
+
+
+@app.route('/payment-success', methods=['POST'])
+def payment_success():
+    data = request.form.to_dict()
+    # Verify signature here if needed
+    flash("Payment successful! Appointment confirmed.", "success")
+    return redirect(url_for('dashboard'))
+
 
 # --------------------------
 # Sell Bike

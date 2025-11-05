@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Complete Payment</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <h2>Processing Payment for ₹{{ amount / 100 }}</h2>
+    <script>
+      var options = {
+        key: "{{ razorpay_key }}",
+        amount: "{{ order.amount }}",
+        currency: "INR",
+        name: "Bikes-Bay",
+        description: "Test Ride Booking",
+        order_id: "{{ order.id }}",
+        handler: function (response) {
+          alert("Payment Successful!");
+          window.location.href = "{{ url_for('home') }}";
+        },
+        prefill: {
+          name: "{{ name }}",
+          email: "{{ email }}",
+          contact: "{{ phone }}",
+        },
+        theme: {
+          color: "#528FF0",
+        },
+      };
+      var rzp = new Razorpay(options);
+      rzp.open();
+    </script>
+  </body>
+</html>
