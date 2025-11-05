@@ -1,12 +1,12 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
-from flask_mysqldb import MySQL
-import MySQLdb.cursors
+import mysql.connector
+from mysql.connector import pooling
 from datetime import datetime, timedelta
-import threading
 import traceback
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
 from dotenv import load_dotenv
+
 load_dotenv()
 
 # --------------------------
@@ -15,23 +15,28 @@ load_dotenv()
 app = Flask(__name__)
 app.secret_key = 'superbikes_secret_key'
 
-mysql = MySQL(app)
-
 UPLOAD_FOLDER = 'static/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-app.config['MYSQL_POOL_NAME'] = 'mypool'
-app.config['MYSQL_POOL_SIZE'] = 5
-
 # --------------------------
 # MySQL Config (from env vars)
 # --------------------------
-app.config['MYSQL_HOST'] = os.environ.get('MYSQL_HOST')
-app.config['MYSQL_USER'] = os.environ.get('MYSQL_USER')
-app.config['MYSQL_PASSWORD'] = os.environ.get('MYSQL_PASSWORD')
-app.config['MYSQL_DB'] = os.environ.get('MYSQL_DB')
-app.config['MYSQL_PORT'] = os.environ.get('MYSQL_PORT')
+dbconfig = {
+    "host": os.environ.get("MYSQL_HOST"),
+    "user": os.environ.get("MYSQL_USER"),
+    "password": os.environ.get("MYSQL_PASSWORD"),
+    "database": os.environ.get("MYSQL_DB"),
+    "port": int(os.environ.get("MYSQL_PORT", 3306)),
+    "ssl_ca": "certs/ca.pem"  # Path to your Aiven SSL CA file
+}
+
+# Connection Pool
+connection_pool = pooling.MySQLConnectionPool(pool_name="mypool", pool_size=5, **dbconfig)
+
+def get_db_connection():
+    return connection_pool.get_connection()
+
 # --------------------------
 # Token Serializer (for password reset)
 # --------------------------
@@ -44,10 +49,12 @@ s = URLSafeTimedSerializer(app.secret_key)
 def forgot_password():
     if request.method == 'POST':
         email = request.form['email']
-        cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        conn = get_db_connection()
+        cur = conn.cursor(dictionary=True)
         cur.execute("SELECT * FROM users WHERE email=%s", (email,))
         user = cur.fetchone()
         cur.close()
+        conn.close()
 
         if user:
             flash("Password reset link feature is disabled (email removed).", "info")
@@ -71,10 +78,12 @@ def reset_password(token):
 
     if request.method == 'POST':
         new_password = request.form['password']
-        cur = mysql.connection.cursor()
+        conn = get_db_connection()
+        cur = conn.cursor()
         cur.execute("UPDATE users SET password=%s WHERE email=%s", (new_password, email))
-        mysql.connection.commit()
+        conn.commit()
         cur.close()
+        conn.close()
         flash("Password updated successfully!", "success")
         return redirect(url_for('show_login'))
 
@@ -92,10 +101,12 @@ def login():
     email = request.form['email']
     password = request.form['password']
 
-    cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    conn = get_db_connection()
+    cur = conn.cursor(dictionary=True)
     cur.execute("SELECT * FROM users WHERE email=%s AND password=%s", (email, password))
     user = cur.fetchone()
     cur.close()
+    conn.close()
 
     if user:
         session['user_id'] = user['id']
@@ -112,17 +123,20 @@ def signup():
     email = request.form['email']
     password = request.form['password']
 
-    cur = mysql.connection.cursor()
+    conn = get_db_connection()
+    cur = conn.cursor(dictionary=True)
     cur.execute("SELECT * FROM users WHERE email = %s", (email,))
     existing_user = cur.fetchone()
 
     if existing_user:
         cur.close()
+        conn.close()
         return redirect(url_for('show_login', email_exists='true'))
 
     cur.execute("INSERT INTO users (name, email, password) VALUES (%s, %s, %s)", (name, email, password))
-    mysql.connection.commit()
+    conn.commit()
     cur.close()
+    conn.close()
 
     flash("Account created successfully! You can now log in.", "success")
     return redirect(url_for('show_login'))
@@ -143,13 +157,15 @@ def contactUs():
         mob = request.form['mob']
         query = request.form['query']
 
-        cur = mysql.connection.cursor()
+        conn = get_db_connection()
+        cur = conn.cursor()
         cur.execute(
             "INSERT INTO contact_messages (name, email, phone, query) VALUES (%s, %s, %s, %s)",
             (name, email, mob, query)
         )
-        mysql.connection.commit()
+        conn.commit()
         cur.close()
+        conn.close()
 
         flash("Your message has been submitted successfully!", "success")
         return redirect(url_for('home'))
@@ -185,15 +201,17 @@ def book_appointment_page():
                 flash(f'You can only book appointments from {min_date} onwards.', 'danger')
                 return redirect(url_for('book_appointment_page'))
 
-            cursor = mysql.connection.cursor()
+            conn = get_db_connection()
+            cur = conn.cursor()
             query = """
                 INSERT INTO appointments 
                 (name, email, phone, vehicle, date, time, area, city, state, post_code, driving_license)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
-            cursor.execute(query, (name, email, phone, vehicle, date_str, time, area, city, state, post_code, driving_license))
-            mysql.connection.commit()
-            cursor.close()
+            cur.execute(query, (name, email, phone, vehicle, date_str, time, area, city, state, post_code, driving_license))
+            conn.commit()
+            cur.close()
+            conn.close()
 
             flash('Appointment booked successfully!', 'success')
             return redirect(url_for('home'))
@@ -229,16 +247,18 @@ def sell_bike_page():
             rc_image.save(rc_path)
             bike_image.save(bike_path)
 
-            cursor = mysql.connection.cursor()
+            conn = get_db_connection()
+            cur = conn.cursor()
             sql = """
                 INSERT INTO resale_bikes 
                 (name, email, phone, address, chassis, plate, rc_image, bike_image, years_used, owners)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
             val = (name, email, phone, address, chassis, plate, rc_path, bike_path, years_used, owners)
-            cursor.execute(sql, val)
-            mysql.connection.commit()
-            cursor.close()
+            cur.execute(sql, val)
+            conn.commit()
+            cur.close()
+            conn.close()
 
             flash("Your bike details have been submitted successfully!", "success")
             return redirect(url_for('home'))
@@ -258,7 +278,8 @@ def dashboard():
     if 'username' not in session:
         return redirect(url_for('show_login'))
 
-    cur = mysql.connection.cursor()
+    conn = get_db_connection()
+    cur = conn.cursor()
     cur.execute("SELECT id, bike_name, bike_image, bike_link FROM wishlist WHERE user_email=%s", (session['email'],))
     wishlist_items = cur.fetchall()
     wishlist = [{"id": i[0], "bike_name": i[1], "bike_image": i[2], "bike_link": i[3]} for i in wishlist_items]
@@ -268,6 +289,7 @@ def dashboard():
     appointments = [{"id": i[0], "vehicle": i[1], "date": i[2], "time": i[3], "area": i[4], "city": i[5]} for i in appt_items]
 
     cur.close()
+    conn.close()
     return render_template('Dashboard.html', username=session['username'], wishlist=wishlist, appointments=appointments)
 
 # --------------------------
@@ -283,18 +305,21 @@ def add_to_wishlist():
     bike_image = data.get('bike_image')
     bike_link = data.get('bike_link')
 
-    cur = mysql.connection.cursor()
+    conn = get_db_connection()
+    cur = conn.cursor(dictionary=True)
     cur.execute("SELECT * FROM wishlist WHERE user_email=%s AND bike_name=%s", (session['email'], bike_name))
     exists = cur.fetchone()
 
     if exists:
         cur.close()
+        conn.close()
         return jsonify({'status': 'exists', 'message': 'Already in wishlist'})
 
     cur.execute("INSERT INTO wishlist (user_email, bike_name, bike_image, bike_link) VALUES (%s, %s, %s, %s)",
                 (session['email'], bike_name, bike_image, bike_link))
-    mysql.connection.commit()
+    conn.commit()
     cur.close()
+    conn.close()
     return jsonify({'status': 'success', 'message': 'Added to wishlist'})
 
 @app.route('/remove_from_wishlist', methods=['POST'])
@@ -309,10 +334,12 @@ def remove_from_wishlist():
         return jsonify({"status": "error", "message": "No bike ID provided"}), 400
 
     try:
-        cur = mysql.connection.cursor()
+        conn = get_db_connection()
+        cur = conn.cursor()
         cur.execute("DELETE FROM wishlist WHERE id=%s AND user_email=%s", (bike_id, session['email']))
-        mysql.connection.commit()
+        conn.commit()
         cur.close()
+        conn.close()
         return jsonify({"status": "success", "message": "Bike removed successfully"})
     except Exception as e:
         print("Error removing bike:", e)
