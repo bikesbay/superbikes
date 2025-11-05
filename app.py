@@ -5,9 +5,7 @@ from mysql.connector import pooling
 from datetime import datetime, timedelta
 import traceback
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
-from dotenv import load_dotenv
 
-load_dotenv()
 
 # --------------------------
 # Flask App Initialization
