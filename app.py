@@ -1,25 +1,18 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
-import mysql.connector
 from mysql.connector import pooling
 from datetime import datetime, timedelta
 import traceback
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired, BadSignature
 import razorpay
 
-# Initialize Razorpay client
-razorpay_client = razorpay.Client(auth=(
-    os.environ.get("RAZORPAY_KEY_ID"),
-    os.environ.get("RAZORPAY_KEY_SECRET")
-))
-
-
-import os
-
-os.environ['MYSQL_HOST'] = 'BikesBay.mysql.pythonanywhere-services.com'
-os.environ['MYSQL_USER'] = 'BikesBay'
+# --------------------------
+# Environment Variables
+# --------------------------
+os.environ['MYSQL_HOST'] = 'BikesBayy.mysql.pythonanywhere-services.com'
+os.environ['MYSQL_USER'] = 'BikesBayy'
 os.environ['MYSQL_PASSWORD'] = 'shrutiuttekar25neelshinde111125'
-os.environ['MYSQL_DB'] = 'BikesBay$superbikes_db'
+os.environ['MYSQL_DB'] = 'BikesBayy$superbikes_db'
 os.environ['MYSQL_PORT'] = '3306'
 
 os.environ['RAZORPAY_KEY_ID'] = 'rzp_test_Rc14F02CT2fPnH'
@@ -36,24 +29,31 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # --------------------------
-# MySQL Config (from env vars)
+# MySQL Config
 # --------------------------
-
-# Use PythonAnywhere's MySQL connection
 dbconfig = {
-    "host": os.environ.get("MYSQL_HOST", "tanmaypalav.mysql.pythonanywhere-services.com"),
-    "user": os.environ.get("MYSQL_USER", "tanmaypalav"),
-    "password": os.environ.get("MYSQL_PASSWORD", "YOUR_DATABASE_PASSWORD"),
-    "database": os.environ.get("MYSQL_DB", "tanmaypalav$superbikes"),
+    "host": os.environ.get("MYSQL_HOST"),
+    "user": os.environ.get("MYSQL_USER"),
+    "password": os.environ.get("MYSQL_PASSWORD"),
+    "database": os.environ.get("MYSQL_DB"),
     "port": int(os.environ.get("MYSQL_PORT", 3306))
 }
 
-# Connection pooling (same as before)
-connection_pool = pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=5, **dbconfig)
-
+# Use small pool size for PythonAnywhere
+connection_pool = pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=2, **dbconfig)
 
 def get_db_connection():
     return connection_pool.get_connection()
+
+# --------------------------
+# Initialize Razorpay client
+# --------------------------
+razorpay_client = razorpay.Client(auth=(
+    os.environ.get("RAZORPAY_KEY_ID"),
+    os.environ.get("RAZORPAY_KEY_SECRET")
+))
+
+
 
 # --------------------------
 # Token Serializer (for password reset)
@@ -284,7 +284,7 @@ def sell_bike_page():
             conn = get_db_connection()
             cur = conn.cursor()
             sql = """
-                INSERT INTO resale_bikes 
+                INSERT INTO resale_bikes
                 (name, email, phone, address, chassis, plate, years_used, owners)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
             """
