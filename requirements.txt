@@ -1,6 +1,5 @@
-Flask
-Flask-MySQLdb
-gunicorn
-mysql-connector-python
-python-dotenv
-razorpay
+Flask==3.0.3
+mysql-connector-python==9.1.0
+razorpay==1.4.2
+gunicorn==23.0.0
+itsdangerous==2.2.0

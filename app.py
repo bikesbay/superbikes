@@ -13,6 +13,18 @@ razorpay_client = razorpay.Client(auth=(
     os.environ.get("RAZORPAY_KEY_SECRET")
 ))
 
+
+import os
+
+os.environ['MYSQL_HOST'] = 'BikesBay.mysql.pythonanywhere-services.com'
+os.environ['MYSQL_USER'] = 'BikesBay'
+os.environ['MYSQL_PASSWORD'] = 'shrutiuttekar25neelshinde111125'
+os.environ['MYSQL_DB'] = 'BikesBay$superbikes_db'
+os.environ['MYSQL_PORT'] = '3306'
+
+os.environ['RAZORPAY_KEY_ID'] = 'rzp_test_Rc14F02CT2fPnH'
+os.environ['RAZORPAY_KEY_SECRET'] = 'K2Mb1ObkXAbao1HOv9Dexf3I'
+
 # --------------------------
 # Flask App Initialization
 # --------------------------
@@ -26,17 +38,19 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 # --------------------------
 # MySQL Config (from env vars)
 # --------------------------
+
+# Use PythonAnywhere's MySQL connection
 dbconfig = {
-    "host": os.environ.get("MYSQL_HOST"),
-    "user": os.environ.get("MYSQL_USER"),
-    "password": os.environ.get("MYSQL_PASSWORD"),
-    "database": os.environ.get("MYSQL_DB"),
-    "port": int(os.environ.get("MYSQL_PORT", 3306)),
-    "ssl_ca": "certs/ca.pem"  # Path to your Aiven SSL CA file
+    "host": os.environ.get("MYSQL_HOST", "tanmaypalav.mysql.pythonanywhere-services.com"),
+    "user": os.environ.get("MYSQL_USER", "tanmaypalav"),
+    "password": os.environ.get("MYSQL_PASSWORD", "YOUR_DATABASE_PASSWORD"),
+    "database": os.environ.get("MYSQL_DB", "tanmaypalav$superbikes"),
+    "port": int(os.environ.get("MYSQL_PORT", 3306))
 }
 
-# Connection Pool
-connection_pool = pooling.MySQLConnectionPool(pool_name="mypool", pool_size=5, **dbconfig)
+# Connection pooling (same as before)
+connection_pool = pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=5, **dbconfig)
+
 
 def get_db_connection():
     return connection_pool.get_connection()
