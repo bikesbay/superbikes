@@ -11,7 +11,7 @@ import razorpay
 # --------------------------
 os.environ['MYSQL_HOST'] = 'BikesBayy.mysql.pythonanywhere-services.com'
 os.environ['MYSQL_USER'] = 'BikesBayy'
-os.environ['MYSQL_PASSWORD'] = 'shrutiuttekar25neelshinde111125'
+os.environ['MYSQL_PASSWORD'] = 'nelltanmay1122'
 os.environ['MYSQL_DB'] = 'BikesBayy$superbikes_db'
 os.environ['MYSQL_PORT'] = '3306'
 
@@ -40,7 +40,9 @@ dbconfig = {
 }
 
 # Use small pool size for PythonAnywhere
-connection_pool = pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=2, **dbconfig)
+connection_pool = pooling.MySQLConnectionPool(pool_name="my_pool", pool_size=1, **dbconfig)
+
+
 
 def get_db_connection():
     return connection_pool.get_connection()
